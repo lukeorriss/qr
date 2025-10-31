@@ -35,7 +35,7 @@ A free, customisable QR code generator built with Next.js. Create beautiful QR c
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/lukeorriss/qr
 cd qr
 ```
 
