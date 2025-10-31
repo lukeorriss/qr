@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3e8ff;
+  --foreground: #000000;
+  --border-width: 2px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+:root {
+  --radius: 0;
+  --background: #f3e8ff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #ffeb3b;
+  --primary-foreground: #000000;
+  --secondary: #e8f5e9;
+  --secondary-foreground: #000000;
+  --muted: #f5f5f5;
+  --muted-foreground: #666666;
+  --accent: #4caf50;
+  --accent-foreground: #ffffff;
+  --destructive: #f44336;
+  --destructive-foreground: #ffffff;
+  --border: #000000;
+  --input: #ffffff;
+  --ring: #000000;
+  --border-width: 2px;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --card: #2a2a2a;
+  --card-foreground: #ffffff;
+  --popover: #2a2a2a;
+  --popover-foreground: #ffffff;
+  --primary: #ffeb3b;
+  --primary-foreground: #000000;
+  --secondary: #3a3a3a;
+  --secondary-foreground: #ffffff;
+  --muted: #3a3a3a;
+  --muted-foreground: #999999;
+  --accent: #4caf50;
+  --accent-foreground: #ffffff;
+  --destructive: #f44336;
+  --destructive-foreground: #ffffff;
+  --border: #ffffff;
+  --input: #2a2a2a;
+  --ring: #ffffff;
+}
+
+/* Brutalist thick borders */
+* {
+  border-color: var(--border) !important;
+}
+
+/* Brutalist button hover effects */
+button, a[role="button"], [data-slot="button"] {
+  border-width: var(--border-width) !important;
+  border-style: solid !important;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer !important;
+}
+
+button:hover:not(:disabled),
+a[role="button"]:hover,
+[data-slot="button"]:hover:not(:disabled) {
+  border-width: 3px !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 0 var(--border);
+}
+
+button:active:not(:disabled),
+a[role="button"]:active,
+[data-slot="button"]:active:not(:disabled) {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 0 var(--border);
+  border-width: var(--border-width) !important;
+}
+
+/* Input hover/focus effects */
+input, textarea, select {
+  border-width: var(--border-width) !important;
+  border-style: solid !important;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:hover, textarea:hover, select:hover {
+  border-width: 3px !important;
+  box-shadow: 2px 2px 0 0 var(--border);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-width: 3px !important;
+  box-shadow: 3px 3px 0 0 var(--border);
+  outline: none;
+}
+
+/* Card brutalist styling */
+[data-slot="card"] {
+  border-width: var(--border-width) !important;
+  border-style: solid !important;
+}
+
+/* Tabs brutalist styling */
+[role="tab"] {
+  border-width: var(--border-width) !important;
+  border-style: solid !important;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer !important;
+}
+
+[role="tab"]:hover {
+  border-width: 3px !important;
+  box-shadow: 2px 2px 0 0 var(--border);
+}
+
+[role="tab"][data-state="active"] {
+  border-width: 3px !important;
+  box-shadow: 3px 3px 0 0 var(--border);
+}
+
+/* Accordion brutalist styling */
+[data-state="open"] [data-slot="accordion-trigger"] {
+  border-bottom-width: var(--border-width) !important;
+}
+
+/* Badge brutalist styling */
+[data-slot="badge"] {
+  border-width: 2px !important;
+  border-style: solid !important;
+  font-weight: 700;
+}
+
+/* Slider brutalist styling */
+input[type="range"] {
+  border: none !important;
+}
+
+input[type="range"]:focus {
+  border: none !important;
+  box-shadow: none;
+}
+
+/* Select dropdown brutalist */
+[role="combobox"] {
+  border-width: var(--border-width) !important;
+  border-style: solid !important;
+  cursor: pointer !important;
+}
+
+[role="combobox"]:hover {
+  border-width: 3px !important;
+  box-shadow: 2px 2px 0 0 var(--border);
+}
+
+[role="combobox"]:focus {
+  border-width: 3px !important;
+  box-shadow: 3px 3px 0 0 var(--border);
+}
+
+/* Force all elements to have square corners */
+* {
+  border-radius: 0 !important;
+}
+
+/* File input styling */
+input[type="file"] {
+  border: none !important;
+  background: transparent !important;
+  color: black !important;
+  font-weight: bold !important;
+  font-family: 'Courier New', 'Monaco', monospace !important;
+  padding: 0 !important;
+}
+
+input[type="file"]:hover {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+input[type="file"]:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* File input button styling */
+input[type="file"]::file-selector-button {
+  border-width: var(--border-width) !important;
+  border-style: solid !important;
+  border-color: var(--border) !important;
+  background: white !important;
+  color: black !important;
+  font-weight: bold !important;
+  font-family: 'Courier New', 'Monaco', monospace !important;
+  padding: 0.5rem 1rem !important;
+  margin-right: 0.5rem !important;
+  border-radius: 0 !important;
+}
+
+input[type="file"]::file-selector-button:hover {
+  border-width: 3px !important;
+  box-shadow: 2px 2px 0 0 var(--border);
+}
+
+/* Select dropdown content background fix */
+[data-slot="select-content"] {
+  background: white !important;
+}
+
+/* Accordion item containers */
+[data-slot="accordion-item"] {
+  border-radius: 0 !important;
+}
+
+/* QR Code preview scaling */
+[data-slot="qr-preview-container"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+[data-slot="qr-preview-container"] canvas,
+[data-slot="qr-preview-container"] svg {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
